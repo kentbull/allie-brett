@@ -146,6 +146,21 @@ print_lcyan "Allie's inception configuration file created"
 cat ${temp_allie_aid_inception_config}.json
 echo
 
+
+# Create inception event for Allie
+print_green "Creating inception event for Allie"
+kli incept \
+    --name allie_ks \
+    --alias magic-pencil \
+    -f ${temp_allie_aid_inception_config}.json
+echo
+
+# Allie's prefix will always be EFgDuEHVf7HtqPQ5Ng_rctkXIRqNNIZEUH9svN7AFzjg because of the hardcoded salt
+# If you use your own salt you will get a different prefix
+export ALLIE_PREFIX=EFgDuEHVf7HtqPQ5Ng_rctkXIRqNNIZEUH9svN7AFzjg
+print_lcyan "Allie's identifier prefix (AID) is: ${ALLIE_PREFIX}"
+
+# Create inception configuration file for Brett
 read -r -d '' BRETT_AID_INCEPTION_CONFIG <<EOM
 {
   "transferable": true,
@@ -168,19 +183,6 @@ cp -v ${temp_brett_aid_inception_config} ${temp_brett_aid_inception_config}.json
 print_lcyan "Brett's inception configuration file created"
 cat ${temp_brett_aid_inception_config}.json
 echo
-
-# Create inception events for Allie and Brett
-print_green "Creating inception event for Allie"
-kli incept \
-    --name allie_ks \
-    --alias magic-pencil \
-    -f ${temp_allie_aid_inception_config}.json
-echo
-
-# Allie's prefix will always be EFgDuEHVf7HtqPQ5Ng_rctkXIRqNNIZEUH9svN7AFzjg because of the hardcoded salt
-# If you use your own salt you will get a different prefix
-export ALLIE_PREFIX=EFgDuEHVf7HtqPQ5Ng_rctkXIRqNNIZEUH9svN7AFzjg
-print_lcyan "Allie's identifier prefix (AID) is: ${ALLIE_PREFIX}"
 
 # Create inception event for Brett
 print_green "Creating inception event for Brett"
