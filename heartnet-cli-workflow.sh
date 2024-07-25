@@ -46,8 +46,9 @@ fi
 export WAN_WITNESS_AID="BBilc4-L3tFUnfM_wJr4S4OJanAv_VmF_dJNN6vkf2Ha"
 export WIL_WITNESS_AID="BLskRTInXnMxWaGqcpSyMgo0nYbalW99cGZESrz3zapM"
 export WES_WITNESS_AID="BIKKuvBwpmDVA4Ds-EpL5bt9OqPzWPja2LigFYZN2YfX"
-
-
+export WIT_WITNESS_AID="BM35JN8XeJSEfpxopjn5jr7tAHCE5749f0OobhMLCorE"
+export WUB_WITNESS_AID="BIj15u5V11bkbtAxMA7gcNJZcax-7TgaBMLsQnMHpYHP"
+export WYZ_WITNESS_AID="BF2rZTW79z4IXocYRQnjjsOuvFUQv-ptCf8Yltd7PfsM"
 #
 # Create keystore configuration files for Allie and Brett
 #
@@ -80,9 +81,9 @@ read -r -d '' BRETT_KEYSTORE_CONFIG_JSON <<EOM
 {
   "dt": "2022-01-20T12:57:59.823350+00:00",
   "iurls": [
-    "http://127.0.0.1:5642/oobi/${WAN_WITNESS_AID}/controller",
-    "http://127.0.0.1:5643/oobi/${WIL_WITNESS_AID}/controller",
-    "http://127.0.0.1:5644/oobi/${WES_WITNESS_AID}/controller"
+    "http://127.0.0.1:5645/oobi/${WIT_WITNESS_AID}/controller",
+    "http://127.0.0.1:5646/oobi/${WUB_WITNESS_AID}/controller",
+    "http://127.0.0.1:5647/oobi/${WYZ_WITNESS_AID}/controller"
   ]
 }
 EOM
@@ -149,9 +150,9 @@ read -r -d '' BRETT_AID_INCEPTION_CONFIG <<EOM
 {
   "transferable": true,
   "wits": [
-    "${WAN_WITNESS_AID}",
-    "${WIL_WITNESS_AID}",
-    "${WES_WITNESS_AID}"
+    "${WIT_WITNESS_AID}",
+    "${WUB_WITNESS_AID}",
+    "${WYZ_WITNESS_AID}"
   ],
   "toad": 3,
   "icount": 1,
